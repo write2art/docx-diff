@@ -37,6 +37,8 @@ function getTextFromTable($table) {
 function extractText($file) {
     $phpWord = \PhpOffice\PhpWord\IOFactory::load($file);
 
+    var_dump($phpWord);
+
     $text = [];
     foreach ($phpWord->getSections() as $section) {
         foreach ($section->getElements() as $element) {
@@ -84,5 +86,5 @@ foreach ($orig as $keyOrig => $valueOrig) {
     }
 }
 
-print_r(array_filter($orig));
-print_r(array_filter($diff));
+//print_r(array_filter($orig));
+//print_r(array_filter($diff));
